@@ -1,0 +1,3 @@
+# Baseline test.
+#
+include gogs

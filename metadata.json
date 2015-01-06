@@ -1,0 +1,56 @@
+{
+  "name": "siteminds-gogs",
+  "version": "0.0.1",
+  "author": "bjwschaap/Siteminds",
+  "summary": "Puppet module to manage the Go Git Service (Gogs).",
+  "license": "MIT",
+  "source": "git://github.com/Siteminds/puppet-gogs.git",
+  "project_page": "https://github.com/Siteminds/puppet-gogs",
+  "issues_url": "https://github.com/Siteminds/puppet-gogs/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":"4.x"}
+  ]
+}

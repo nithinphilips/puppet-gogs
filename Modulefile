@@ -1,0 +1,10 @@
+name          'siteminds-gogs'
+version       '0.0.1'
+source        'git://github.com/Siteminds/puppet-gogs.git'
+author        'bjwschaap'
+license       'MIT'
+summary       'Puppet module to manage the Go Git Service (Gogs).'
+description   'This Puppet module allows you to manage the Gogs service on linux operating systems. Currently only Debian and RedHat family linux is tested/supported.'
+project_page  'https://github.com/Siteminds/puppet-gogs'
+
+dependency 'puppetlabs/stdlib'
