@@ -7,7 +7,6 @@ class gogs::params {
 
   # Parameter defaults
 
-
   case $::osfamily {
     'RedHat': {
       $package_name = 'gogs'
