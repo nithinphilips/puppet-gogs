@@ -4,6 +4,10 @@
 # It sets variables and/or parameters according to platform
 #
 class gogs::params {
+
+  # Parameter defaults
+
+
   case $::osfamily {
     'RedHat': {
       $package_name = 'gogs'

@@ -8,3 +8,4 @@ description   'This Puppet module allows you to manage the Gogs service on linux
 project_page  'https://github.com/Siteminds/puppet-gogs'
 
 dependency 'puppetlabs/stdlib'
+dependency 'puppetlabs/apt'

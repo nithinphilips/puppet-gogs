@@ -10,6 +10,8 @@ describe 'gogs', :type => :class do
         let(:facts) do
           {
             :osfamily => osfamily,
+            :lsbdistid => osfamily,
+            :lsbdistcodename => 'trusty'
           }
         end
         it { is_expected.to contain_class('gogs::params') }
