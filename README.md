@@ -1,6 +1,8 @@
 siteminds/gogs
 ==============
 
+![Travis build status](https://api.travis-ci.org/Siteminds/puppet-gogs.svg)
+
 Overview
 --------
 
