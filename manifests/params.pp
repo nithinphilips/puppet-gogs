@@ -9,8 +9,12 @@ class gogs::params {
       $package_name = 'gogs'
       $service_name = 'gogs'
     }
+    'Debian': {
+      $package_name = 'gogs'
+      $service_name = 'gogs'
+    }
     default: {
-      fail("${::operatingsystem} (${::osfamily}) not supported")
+      fail("${::operatingsystem} not supported")
     }
   }
 }

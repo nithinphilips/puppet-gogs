@@ -1,19 +1,21 @@
 require 'spec_helper'
 
-describe 'gogs' do
+describe 'gogs', :type => :class do
   context 'supported operating systems' do
     ['Debian', 'RedHat'].each do |osfamily|
       describe "gogs class without any parameters on #{osfamily}" do
-        let(:params) {{ }}
-        let(:facts) {{
-          :osfamily => osfamily,
-        }}
-
-        it { should include_class('gogs::params') }
-
-        it { should contain_class('gogs::install') }
-        it { should contain_class('gogs::config') }
-        it { should contain_class('gogs::service') }
+        let(:params) do
+          { }
+        end
+        let(:facts) do
+          {
+            :osfamily => osfamily,
+          }
+        end
+        it { is_expected.to contain_class('gogs::params') }
+        it { is_expected.to contain_class('gogs::install') }
+        it { is_expected.to contain_class('gogs::config') }
+        it { is_expected.to contain_class('gogs::service') }
       end
     end
   end
@@ -24,7 +26,6 @@ describe 'gogs' do
         :osfamily        => 'Solaris',
         :operatingsystem => 'Nexenta',
       }}
-
       it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
     end
   end

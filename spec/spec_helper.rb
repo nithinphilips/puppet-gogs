@@ -9,16 +9,27 @@ require 'hiera'
 fixture_path = File.expand_path(File.join(__FILE__, '..', 'fixtures'))
 
 RSpec.configure do |c|
+   c.mock_with :rspec do |mock|
+      mock.syntax = [:expect, :should]
+   end
+   c.include PuppetlabsSpec::Files
 
-  c.hiera_config = File.join(fixture_path, 'hiera.yaml')
+   c.before :each do
+      # Store any environment variables away to be restored later
+      @old_env = {}
+      ENV.each_key {|k| @old_env[k] = ENV[k]}
+      if ENV['STRICT_VARIABLES'] == 'yes'
+         Puppet.settings[:strict_variables]=true
+      end
+   end
 
-  c.before(:all) do
-    data = YAML.load_file(c.hiera_config)
-
-    data[:yaml][:datadir] = File.join(fixture_path, 'hieradata')
-    File.open(c.hiera_config, 'w') do |f|
-      f.write data.to_yaml
-    end
-  end
+   c.after :each do
+      PuppetlabsSpec::Files.cleanup
+   end
 end
 
+# Convenience helper for returning parameters for a type from the
+# catalogue.
+def param(type, title, param)
+   param_value(catalogue, type, title, param)
+end
