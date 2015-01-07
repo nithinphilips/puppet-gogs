@@ -1,7 +1,7 @@
 # PRIVATE CLASS: do not use directly
 class gogs::repo (
 
-  $install_repo = false
+  $install_repo = $gogs::install_repo
 
 ) inherits gogs::params {
 

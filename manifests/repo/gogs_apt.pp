@@ -4,7 +4,7 @@ class gogs::repo::gogs_apt(
 
   include ::apt
 
-  apt::source { 'deb.packager.io/gogs':
+  apt::source { 'deb.packager.io-gogs':
     comment     => 'This is the Gogs package repository on packager.io',
     location    => 'https://deb.packager.io/gh/pkgr/gogs',
     release     => $::lsbdistcodename,
@@ -14,5 +14,5 @@ class gogs::repo::gogs_apt(
   }
 
   # Make sure repo is configured before package is installed
-  Apt::Source['deb.packager.io/gogs'] -> Package<|tag == 'gogs'|>
+  Apt::Source['deb.packager.io-gogs'] -> Package<|tag == 'gogs'|>
 }
