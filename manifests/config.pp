@@ -35,8 +35,8 @@ class gogs::config(
   file { '/etc/gogs/conf/app.ini':
     ensure  => 'file',
     content => template('gogs/app.ini.erb'),
-    owner  => $owner,
-    group  => $group,
+    owner   => $owner,
+    group   => $group,
   }
 
   file { '/etc/init.d/gogs':
