@@ -53,6 +53,10 @@
 #   For postgres only. Valid values are: 'disable', 'require' or 'verify-full'.
 #   Default: 'disable'
 #
+# [*secret_key*]
+#   The secret key. You should provide one for each Gogs instance. When not passed a default
+#   secret key will be used.
+#
 class gogs (
 
   $install_repo = $gogs::params::install_repo,

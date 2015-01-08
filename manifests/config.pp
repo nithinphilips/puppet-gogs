@@ -18,7 +18,7 @@ class gogs::config(
   $db_password = $gogs::db_password,
   $db_ssl_mode = $gogs::db_ssl_mode,
   $owner = $gogs::params::owner,
-  $group = $gogs::params::groups,
+  $group = $gogs::params::group,
   $secret_key = $gogs::secret_key
 
 ) inherits gogs::params {
