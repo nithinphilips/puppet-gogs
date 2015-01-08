@@ -6,6 +6,7 @@
 class gogs::params {
 
   # Parameter defaults
+  $lock_install    = true
   $install_repo    = false
   $run_mode        = 'prod'
   $repository_root = '/home/gogs/gogs-repositories'
@@ -19,6 +20,7 @@ class gogs::params {
   $db_user         = 'gogs'
   $db_password     = 'gogs'
   $db_ssl_mode     = 'disable'
+  $db_data         = 'data/gogs.db'
   $secret_key      = 'jdkR3DBcXUDdznd'
 
   # Variables
@@ -29,8 +31,10 @@ class gogs::params {
 
   case $::osfamily {
     'RedHat': {
+      $initrd_script = 'initrd.centos'
     }
     'Debian': {
+      $initrd_script = 'initrd.debian'
     }
     default: {
       fail("${::operatingsystem} not supported")

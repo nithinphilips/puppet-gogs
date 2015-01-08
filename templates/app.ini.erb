@@ -28,13 +28,12 @@ NAME = <%= @db_name %>
 USER = <%= @db_user %>
 PASSWD = <%= @db_password %>
 SSL_MODE = <%= @db_ssl_mode %>
-PATH = data/gogs.db
+PATH = <%= @db_data %>
 
 [admin]
 
 [security]
-INSTALL_LOCK = true
-; !!CHANGE THIS TO KEEP YOUR USER DATA SAFE!!
+INSTALL_LOCK = <%= @lock_install %>
 SECRET_KEY = <%= @secret_key %>
 ; Auto-login remember days
 LOGIN_REMEMBER_DAYS = 7
@@ -186,13 +185,11 @@ BUFFER_LEN = 10000
 ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "Trace"
 LEVEL = Trace
 
-; For "console" mode only
 [log.console]
-LEVEL =
+LEVEL = Info
 
-; For "file" mode only
 [log.file]
-LEVEL =
+LEVEL = Warn
 ; This enables automated log rotate(switch of following options), default is true
 LOG_ROTATE = true
 ; Max line number of single file, default is 1000000
@@ -241,7 +238,7 @@ CONN =
 MAX_GIT_DIFF_LINES = 10000
 ; Arguments for command 'git gc', e.g.: "--aggressive --auto"
 ; see more on http://git-scm.com/docs/git-gc/1.7.5
-GC_ARGS =
+GC_ARGS = "--aggressive --auto"
 
 ; Git health check.
 [git.fsck]

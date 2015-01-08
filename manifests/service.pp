@@ -8,7 +8,7 @@ class gogs::service {
 
   service { $gogs::params::service_name:
     ensure     => running,
-    hasstatus  => true,
     hasrestart => true,
+    enable     => true,
   }
 }

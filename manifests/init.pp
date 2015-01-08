@@ -28,8 +28,9 @@
 #   Boolean indicating wheter or not (http) gzip compression should be used. Default: false.
 #
 # [*db_type*]
-#   The type of database back-end to be used by Gogs. Allowed values are: 'postgres' or 'mysql'.
-#   Please note that the packages from packager.io, used by this module don't support sqlite3.
+#   The type of database back-end to be used by Gogs. Allowed values are: 'postgres', 'mysql'
+#   or 'sqlite3'. Please note that the packages from packager.io, used by this module when you
+#   select install_repo = true don't support sqlite3.
 #   Also note that this module does not install a database for Gogs. Please use another module
 #   e.g. the Puppetlabs/Postgresql module from the forge to install one.
 #   Default: 'postgres'.
@@ -53,6 +54,9 @@
 #   For postgres only. Valid values are: 'disable', 'require' or 'verify-full'.
 #   Default: 'disable'
 #
+# [*db_data*]
+#   Path where sqlite3 should store its data. Only used when db_type = 'sqlite3'.
+#
 # [*secret_key*]
 #   The secret key. You should provide one for each Gogs instance. When not passed a default
 #   secret key will be used.
@@ -72,7 +76,9 @@ class gogs (
   $db_user = $gogs::params::db_user,
   $db_password = $gogs::params::db_password,
   $db_ssl_mode = $gogs::params::db_ssl_mode,
-  $secret_key = $gogs::params::secret_key
+  $db_data = $gogs::params::db_data,
+  $secret_key = $gogs::params::secret_key,
+  $lock_install = $gogs::params::lock_install
 
 ) inherits gogs::params {
 
@@ -85,4 +91,5 @@ class gogs (
   class  { '::gogs::config': } ~>
   class  { '::gogs::service': } ->
   anchor { 'gogs::end': }
+
 }
