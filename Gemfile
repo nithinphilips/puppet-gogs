@@ -6,6 +6,8 @@ group :development, :unit_tests do
   gem 'rspec-core',              :require => false
   gem 'rspec-support',           :require => false
   gem 'rspec-puppet',            :require => false
+  gem 'rspec-mocks',             :require => false
+  gem 'rspec-expectations',      :require => false
   gem 'puppetlabs_spec_helper',  :require => false
   gem 'puppet-lint',             :require => false
   gem 'simplecov',               :require => false
