@@ -66,7 +66,7 @@ RSpec.configure do |c|
   # Configure all nodes in nodeset
   c.before :suite do
     # Install module and dependencies
-    puppet_module_install(:source => proj_root, :module_name => 'postgresql')
+    puppet_module_install(:source => proj_root, :module_name => 'gogs')
 
     # Set up selinux if appropriate.
     if fact('osfamily') == 'RedHat' && fact('selinux') == 'true'
@@ -78,8 +78,8 @@ RSpec.configure do |c|
           }
 
           package { $semanage_package: ensure => installed }
-          exec { 'set_postgres':
-            command     => 'semanage port -a -t postgresql_port_t -p tcp 5433',
+          exec { 'set_gogs':
+            command     => 'semanage port -a -t gogs_port_t -p tcp 6000',
             path        => '/bin:/usr/bin/:/sbin:/usr/sbin',
             subscribe   => Package[$semanage_package],
           }
