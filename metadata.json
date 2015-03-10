@@ -1,6 +1,6 @@
 {
   "name": "Siteminds-gogs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "bjwschaap/Siteminds",
   "summary": "Puppet module to manage the Go Git Service (Gogs).",
   "license": "MIT",
