@@ -34,29 +34,30 @@ or:
 Configure it to your needs using the parameters below.
 
 ### Parameters
-*install_repo*
+
+#### install_repo
   Boolean indicating wheter or not the gogs package repository should be added to the hosts
   package manager configuration. Default: false.
 
-*run_mode*
+#### run_mode
   The environment this Gogs instance is running for. Allowed values are: 'dev', 'test' or
   'prod'. Default: 'prod'
 
-*repository_root*
+#### repository_root
   Root directory that will contain all Git repositories. If this directory does not exist,
   it will be created. Please note that the parent directory for the repository root must
   already exist! Default: '/home/gogs/gogs-repositories'
 
-*domain*
+#### domain
   The domain name the Gogs service should serve/listen to. Default: 'localhost'.
 
-*port*
+#### port
   The port the Gogs service should listen on. Default: 6000.
 
-*enable_gzip*
+#### enable_gzip
   Boolean indicating wheter or not (http) gzip compression should be used. Default: false.
 
-*db_type*
+#### db_type
   The type of database back-end to be used by Gogs. Allowed values are: 'postgres', 'mysql'
   or 'sqlite3'. Please note that the packages from packager.io, used by this module when you
   select install_repo = true don't support sqlite3.
@@ -64,29 +65,29 @@ Configure it to your needs using the parameters below.
   e.g. the Puppetlabs/Postgresql module from the forge to install one.
   Default: 'postgres'.
 
-*db_host*
+#### db_host
   The hostname of the machine where the Gogs database is running. Default: 'localhost'.
 
-*db_port*
+#### db_port
   The port of the Gogs database. Default: 5432.
 
-*db_name*
+#### db_name
   Name of the Gogs database. Default: 'gogs'.
 
-*db_user*
+#### db_user
   The username credential used for connecting to the Gogs database. Default: 'gogs'.
 
-*db_password*
+#### db_password
   The password credential used for connecting to the Gogs database. DefaulT: 'gogs'.
 
-*db_ssl_mode*
+#### db_ssl_mode
   For postgres only. Valid values are: 'disable', 'require' or 'verify-full'.
   Default: 'disable'
 
-*db_data*
+#### db_data
   Path where sqlite3 should store its data. Only used when db_type = 'sqlite3'.
 
-*secret_key*
+#### secret_key
   The secret key. You should provide one for each Gogs instance. When not passed a default
   secret key will be used.
 
