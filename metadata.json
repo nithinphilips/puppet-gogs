@@ -7,6 +7,7 @@
   "source": "git://github.com/Siteminds/puppet-gogs.git",
   "project_page": "https://github.com/Siteminds/puppet-gogs",
   "issues_url": "https://github.com/Siteminds/puppet-gogs/issues",
+  "tags": ["gogs", "go", "git", "vcs"],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
