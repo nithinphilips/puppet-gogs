@@ -39,6 +39,10 @@ Configure it to your needs using the parameters below.
   Boolean indicating wheter or not the gogs package repository should be added to the hosts
   package manager configuration. Default: false.
 
+#### package_ensure
+  Value to pass through to the `package` resource when installing Gogs. Defaults to 
+  `present`.
+
 #### run_mode
   The environment this Gogs instance is running for. Allowed values are: 'dev', 'test' or
   'prod'. Default: 'prod'
