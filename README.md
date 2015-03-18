@@ -40,7 +40,7 @@ Configure it to your needs using the parameters below.
   package manager configuration. Default: false.
 
 #### package_ensure
-  Value to pass through to the `package` resource when installing `gogs`. Defaults to 
+  Value to pass through to the `package` resource when installing Gogs. Defaults to 
   `present`.
 
 #### run_mode
