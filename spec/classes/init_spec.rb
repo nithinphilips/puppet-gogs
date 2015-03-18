@@ -22,13 +22,4 @@ describe 'gogs', :type => :class do
     end
   end
 
-  context 'unsupported operating system' do
-    describe 'gogs class without any parameters on Solaris/Nexenta' do
-      let(:facts) {{
-        :osfamily        => 'Solaris',
-        :operatingsystem => 'Nexenta',
-      }}
-      it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
-    end
-  end
 end

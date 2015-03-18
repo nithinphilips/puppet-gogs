@@ -1,8 +1,13 @@
 # == Class gogs::install
 #
-class gogs::install {
+class gogs::install(
 
-  package { $gogs::params::package_name:
-    ensure => $gogs::package_ensure,
+  $package_name   = $gogs::params::package_name,
+  $package_ensure = $gogs::package_ensure
+
+) {
+
+  package { $package_name:
+    ensure => $package_ensure,
   }
 }
