@@ -8,6 +8,7 @@ class gogs::params {
   # Parameter defaults
   $lock_install    = true
   $install_repo    = false
+  $package_ensure  = 'present'
   $run_mode        = 'prod'
   $repository_root = '/home/gogs/gogs-repositories'
   $enable_gzip     = false

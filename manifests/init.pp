@@ -9,6 +9,10 @@
 #   Boolean indicating wheter or not the gogs package repository should be added to the hosts
 #   package manager configuration. Default: false.
 #
+# [*install_repo*]
+#   Value to pass through to the `package` resource when installing `gogs`. Defaults to 
+#   `present`.
+#
 # [*run_mode*]
 #   The environment this Gogs instance is running for. Allowed values are: 'dev', 'test' or
 #   'prod'. Default: 'prod'
@@ -64,6 +68,7 @@
 class gogs (
 
   $install_repo = $gogs::params::install_repo,
+  $package_ensure = $gogs::params::package_ensure,
   $run_mode = $gogs::params::run_mode,
   $repository_root = $gogs::params::repository_root,
   $domain = $gogs::params::domain,
