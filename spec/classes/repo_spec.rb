@@ -4,7 +4,7 @@ describe 'gogs::repo', :type => :class do
   context 'Debian' do
     describe "gogs::repo class on Debian" do
       let(:params) do
-        { 
+        {
           'install_repo' => true
         }
       end
@@ -22,7 +22,7 @@ describe 'gogs::repo', :type => :class do
   context 'RedHat' do
     describe "gogs::repo class on RedHat" do
       let(:params) do
-        { 
+        {
           'install_repo' => true
         }
       end
@@ -41,7 +41,10 @@ describe 'gogs::repo', :type => :class do
         :osfamily        => 'Solaris',
         :operatingsystem => 'Nexenta',
       }}
-      it { is_expected.to raise_error(Puppet::Error, /Nexenta not supported/) }
+
+      it {
+        expect { should compile }.to raise_error(Puppet::Error, /Nexenta not supported/)
+      }
     end
   end
 

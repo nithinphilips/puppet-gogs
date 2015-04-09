@@ -9,6 +9,7 @@ require 'hiera'
 fixture_path = File.expand_path(File.join(__FILE__, '..', 'fixtures'))
 
 RSpec.configure do |c|
+   c.raise_errors_for_deprecations!
    c.mock_with :rspec do |mock|
       mock.syntax = [:expect, :should]
    end

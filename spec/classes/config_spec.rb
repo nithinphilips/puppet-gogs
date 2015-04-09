@@ -5,10 +5,11 @@ describe 'gogs::config', :type => :class do
     ['Debian', 'RedHat'].each do |osfamily|
       describe "gogs::config class without any parameters on #{osfamily}" do
         let(:params) do
-          { 
+          {
             'repository_root' => '/foo/bar',
             'owner' => 'somebody',
-            'group' => 'somegroup'
+            'group' => 'somegroup',
+            'lock_install' => false,
           }
         end
         let(:facts) do
@@ -26,7 +27,7 @@ describe 'gogs::config', :type => :class do
         it { is_expected.to contain_file('/etc/gogs/conf/app.ini') }
         it { is_expected.to contain_file('/etc/init.d/gogs')
                .with_owner('root')
-               .with_group('root') 
+               .with_group('root')
            }
       end
     end

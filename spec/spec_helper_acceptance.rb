@@ -63,6 +63,9 @@ RSpec.configure do |c|
   # Readable test descriptions
   c.formatter = :documentation
 
+  # Fail on deprecation warnings
+  c.raise_errors_for_deprecations!
+
   # Configure all nodes in nodeset
   c.before :suite do
     # Install module and dependencies
