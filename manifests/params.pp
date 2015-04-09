@@ -9,6 +9,7 @@ class gogs::params {
   $lock_install    = true
   $install_repo    = false
   $package_ensure  = 'present'
+  $service_ensure  = 'running'
   $run_mode        = 'prod'
   $repository_root = '/home/gogs/gogs-repositories'
   $enable_gzip     = false

@@ -43,7 +43,9 @@ describe 'gogs::repo', :type => :class do
         :osfamily        => 'Solaris',
         :operatingsystem => 'Nexenta',
       }}
-      it { expect { should_not compile }.to raise_error(Puppet::Error, /Nexenta not supported/) }
+      it {
+        expect { should compile }.to raise_error(/Nexenta not supported/)
+      }
     end
   end
 
