@@ -13,6 +13,10 @@
 #   Value to pass through to the `package` resource when installing `gogs`. Defaults to 
 #   `present`.
 #
+# [*service_ensure*]
+#   Value to pass through to the `service` resource when installing `gogs`. Defaults to
+#   `running`.
+#
 # [*run_mode*]
 #   The environment this Gogs instance is running for. Allowed values are: 'dev', 'test' or
 #   'prod'. Default: 'prod'
@@ -69,6 +73,7 @@ class gogs (
 
   $install_repo = $gogs::params::install_repo,
   $package_ensure = $gogs::params::package_ensure,
+  $service_ensure = $gogs::params::package_ensure,
   $run_mode = $gogs::params::run_mode,
   $repository_root = $gogs::params::repository_root,
   $domain = $gogs::params::domain,
