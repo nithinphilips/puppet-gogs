@@ -43,7 +43,7 @@ describe 'gogs::repo', :type => :class do
       }}
 
       it {
-        expect { should compile }.to raise_error(Puppet::Error, /Nexenta not supported/)
+        expect { should compile }.to raise_error(/Nexenta not supported/)
       }
     end
   end
