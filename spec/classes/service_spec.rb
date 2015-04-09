@@ -4,6 +4,11 @@ describe 'gogs::service', :type => :class do
   context 'supported operating systems' do
     ['Debian', 'RedHat'].each do |osfamily|
       describe "gogs::service class without any parameters on #{osfamily}" do
+        let(:params) do
+          {
+            'service_ensure' => 'beeping'
+          }
+        end
         let(:facts) do
           {
             :osfamily => osfamily,
@@ -11,7 +16,7 @@ describe 'gogs::service', :type => :class do
             :lsbdistcodename => 'trusty'
           }
         end
-        it { is_expected.to contain_service('gogs').with_ensure('running')
+        it { is_expected.to contain_service('gogs').with_ensure('beeping')
         }
       end
     end

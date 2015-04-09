@@ -5,13 +5,12 @@
 #
 class gogs::service
 (
-  $service_ensure   = $gogs::params::service_ensure,
-)
-{
-  include gogs::params
+  $service_ensure   = $gogs::params::service_ensure
+
+) inherits gogs::params {
 
   service { $gogs::params::service_name:
-    ensure     => $gogs::params::service_ensure,
+    ensure     => $service_ensure,
     hasrestart => true,
     enable     => true,
   }
