@@ -10,6 +10,7 @@ describe 'gogs::config', :type => :class do
             'owner' => 'somebody',
             'group' => 'somegroup',
             'lock_install' => false,
+            'run_mode' => 'blah'
           }
         end
         let(:facts) do
@@ -24,7 +25,11 @@ describe 'gogs::config', :type => :class do
                .with_owner('somebody')
                .with_group('somegroup')
            }
-        it { is_expected.to contain_file('/etc/gogs/conf/app.ini') }
+        it { is_expected.to contain_file('/etc/gogs/conf/app.ini')
+               .with_content(/^\s*INSTALL_LOCK = false$/)
+               .with_content(/^\s*RUN_MODE = blah$/)
+               .with_content(/^\s*RUN_USER = somebody$/)
+               .with_content(/^\s*ROOT = \/foo\/bar$/) }
         it { is_expected.to contain_file('/etc/init.d/gogs')
                .with_owner('root')
                .with_group('root')
