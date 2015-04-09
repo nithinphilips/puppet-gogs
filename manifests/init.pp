@@ -9,8 +9,8 @@
 #   Boolean indicating wheter or not the gogs package repository should be added to the hosts
 #   package manager configuration. Default: false.
 #
-# [*install_repo*]
-#   Value to pass through to the `package` resource when installing `gogs`. Defaults to 
+# [*package_ensure*]
+#   Value to pass through to the `package` resource when installing `gogs`. Defaults to
 #   `present`.
 #
 # [*service_ensure*]
