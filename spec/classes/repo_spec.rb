@@ -15,6 +15,7 @@ describe 'gogs::repo', :type => :class do
           :lsbdistcodename => 'trusty'
         }
       end
+      it { should compile }
       it { is_expected.to contain_class('gogs::repo::gogs_apt') }
     end
   end
@@ -31,6 +32,7 @@ describe 'gogs::repo', :type => :class do
           :osfamily => 'RedHat'
         }
       end
+      it { should compile }
       it { is_expected.to contain_class('gogs::repo::gogs_yum') }
     end
   end
@@ -41,10 +43,7 @@ describe 'gogs::repo', :type => :class do
         :osfamily        => 'Solaris',
         :operatingsystem => 'Nexenta',
       }}
-
-      it {
-        expect { should compile }.to raise_error(Puppet::Error, /Nexenta not supported/)
-      }
+      it { expect { should_not compile }.to raise_error(Puppet::Error, /Nexenta not supported/) }
     end
   end
 
