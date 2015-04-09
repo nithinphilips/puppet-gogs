@@ -26,6 +26,14 @@ class gogs::config(
 
 ) inherits gogs::params {
 
+  user { $owner:
+    ensure  => present,
+  }
+
+  group { $group:
+    ensure  => present,
+  }
+
   file { $repository_root:
     ensure => 'directory',
     owner  => $owner,
