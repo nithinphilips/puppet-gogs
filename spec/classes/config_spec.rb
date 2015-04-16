@@ -14,6 +14,7 @@ describe 'gogs::config', :type => :class do
             'enable_gzip' => false,
             'domain' => 'foo.org',
             'port' => '8888',
+            'root_url' => 'http://foo.org:8888/',
             'db_type' => 'specialdb',
             'db_host' => 'dbhost',
             'db_port' => '123456',
