@@ -1,3 +1,6 @@
+2015-10-30 Release 0.0.4
+- Fixes #9 through #12 by @StrangeWill
+
 2015-03-18 Release 0.0.3
 - Merged Gogs package version support from pull request by @rauchrob
 - Updated and fixed rspec tests
