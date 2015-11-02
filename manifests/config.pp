@@ -23,7 +23,10 @@ class gogs::config(
   $owner = $gogs::params::owner,
   $group = $gogs::params::group,
   $initrd_script = $gogs::params::initrd_script,
-  $secret_key = $gogs::secret_key
+  $secret_key = $gogs::secret_key,
+  $app_name = $gogs::app_name,
+  $disable_registration = $gogs::disable_registration,
+  $require_signin_view = $gogs::require_signin_view
 
 ) inherits gogs::params {
 

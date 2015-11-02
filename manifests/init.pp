@@ -72,6 +72,15 @@
 #   The secret key. You should provide one for each Gogs instance. When not passed a default
 #   secret key will be used.
 #
+# [*app_name*]
+#   The application name. Default: 'Gogs: Go Git Service'
+#
+# [*disable_registration*]
+#   Disable registration? Default: false
+#
+# [*require_signin_view*]
+#   Require signin to see anything? Default: false
+#
 class gogs (
 
   $install_repo = $gogs::params::install_repo,
@@ -92,7 +101,10 @@ class gogs (
   $db_ssl_mode = $gogs::params::db_ssl_mode,
   $db_data = $gogs::params::db_data,
   $secret_key = $gogs::params::secret_key,
-  $lock_install = $gogs::params::lock_install
+  $lock_install = $gogs::params::lock_install,
+  $app_name = $gogs::params::app_name,
+  $disable_registration = $gogs::params::disable_registration,
+  $require_signin_view = $gogs::params::require_signin_view
 
 ) inherits gogs::params {
 
