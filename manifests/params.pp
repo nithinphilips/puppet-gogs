@@ -25,8 +25,8 @@ class gogs::params {
   $db_ssl_mode     = 'disable'
   $db_data         = 'data/gogs.db'
   $app_name        = 'Gogs: Go Git Service'
-  $disable_registration = 'false'
-  $require_signin_view = 'false'
+  $disable_registration = false
+  $require_signin_view = false
   $secret_key      = 'jdkR3DBcXUDdznd'
 
   # Variables
