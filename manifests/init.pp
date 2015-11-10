@@ -89,6 +89,7 @@ class gogs (
   $run_mode = $gogs::params::run_mode,
   $repository_root = $gogs::params::repository_root,
   $domain = $gogs::params::domain,
+  $addr = $gogs::params::addr,
   $port = $gogs::params::port,
   $root_url = $gogs::params::root_url,
   $enable_gzip = $gogs::params::enable_gzip,

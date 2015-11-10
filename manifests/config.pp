@@ -9,6 +9,7 @@ class gogs::config(
   $repository_root = $gogs::repository_root,
   $enable_gzip = $gogs::enable_gzip,
   $domain = $gogs::domain,
+  $addr = $gogs::addr,
   $port = $gogs::port,
   $root_url = $gogs::root_url,
   $enable_gzip = $gogs::enable_gzip,
