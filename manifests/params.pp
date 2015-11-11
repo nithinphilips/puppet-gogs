@@ -13,9 +13,12 @@ class gogs::params {
   $run_mode        = 'prod'
   $repository_root = '/home/gogs/gogs-repositories'
   $enable_gzip     = false
+  $protocol        = 'http'
   $domain          = 'localhost'
   $addr            = ''
   $port            = 6000
+  $cert_file       = 'custom/https/cert.pem'
+  $key_file        = 'custom/https/cert.key'
   $root_url        = "http://${domain}:${port}/"
   $db_type         = 'postgres'
   $db_host         = 'localhost'
