@@ -2,6 +2,7 @@ siteminds/gogs
 ==============
 
 [![Travis build status](https://api.travis-ci.org/Siteminds/puppet-gogs.svg)](https://travis-ci.org/Siteminds/puppet-gogs)
+[![Quantified Code Analysis](https://www.quantifiedcode.com/api/v1/project/a9ae964decbb4bf4804a61e42b7f0633/badge.svg)](https://www.quantifiedcode.com/app/project/gh:Siteminds:puppet-gogs)
 
 Overview
 --------
