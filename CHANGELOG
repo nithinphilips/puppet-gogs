@@ -1,3 +1,6 @@
+2015-12-16 Release 0.0.7
+- Pull request by @AndreaGiardini to use operatingsystemmajrelease instead of lsbmajdistrelease
+
 2015-12-10 Release 0.0.6
 - Pull request by @jasonhancock to use new apt module, and respect centos7 repo url
 
