@@ -4,7 +4,7 @@ class gogs::repo::gogs_apt(
 
   include ::apt
 
-  package { 'apt-transport-https': }
+  ensure_packages('apt-transport-https')
 
   apt::source { 'deb.packager.io-gogs':
     comment     => 'This is the Gogs package repository on packager.io',
