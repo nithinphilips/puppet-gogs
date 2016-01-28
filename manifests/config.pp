@@ -7,7 +7,6 @@ class gogs::config(
   $lock_install = $gogs::lock_install,
   $run_mode = $gogs::run_mode,
   $repository_root = $gogs::repository_root,
-  $enable_gzip = $gogs::enable_gzip,
   $protocol = $gogs::protocol,
   $domain = $gogs::domain,
   $addr = $gogs::addr,
