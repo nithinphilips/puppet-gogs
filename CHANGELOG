@@ -1,3 +1,7 @@
+2016-01-29 Release 0.0.8
+- Pull request by @AndresGiardini to replace 'Package' with ensure_packages
+- Pull request by @Samuelson to remove a duplicate parameter in config.pp
+
 2015-12-16 Release 0.0.7
 - Pull request by @AndreaGiardini to use operatingsystemmajrelease instead of lsbmajdistrelease
 
