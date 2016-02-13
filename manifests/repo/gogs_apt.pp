@@ -20,7 +20,8 @@ class gogs::repo::gogs_apt(
     },
     require  => [
       Package['apt-transport-https']
-    ]
+    ],
+    notify   => Exec['apt_update'],
   }
 
   # Make sure repo is configured before package is installed
