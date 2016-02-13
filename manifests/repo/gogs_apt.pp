@@ -15,8 +15,10 @@ class gogs::repo::gogs_apt(
       id     => '6257DF9972462F57A20FFB2AB6D583CCBD33EEB8',
       source => 'https://deb.packager.io/key',
     },
-    include_src => false,
-    require     => [
+    include  => {
+      'src' => false,
+    },
+    require  => [
       Package['apt-transport-https']
     ]
   }
