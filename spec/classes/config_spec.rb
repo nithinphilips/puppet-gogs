@@ -51,10 +51,11 @@ describe 'gogs::config', :type => :class do
                .with_content(/^\s*ROOT = \/foo\/bar$/)
                .with_content(/^\s*ENABLE_GZIP = false$/)
                .with_content(/^\s*DOMAIN = foo\.org/)
-               .with_content(/^\s*ROOT_URL = http:\/\/foo\.org:8888/) }
+               .with_content(/^\s*ROOT_URL = http:\/\/foo\.org:8888/)
                .with_content(/^\s*OFFLINE_MODE = true$/)
                .with_content(/^\s*HOST = mailserver/)
                .with_content(/^\s*DISABLE_GRAVATAR = true$/)
+           }
         it { is_expected.to contain_file('/etc/init.d/gogs')
                .with_owner('root')
                .with_group('root')
@@ -62,5 +63,4 @@ describe 'gogs::config', :type => :class do
       end
     end
   end
-
 end
