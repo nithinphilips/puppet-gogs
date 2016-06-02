@@ -11,6 +11,7 @@ describe 'gogs::config', :type => :class do
             'group' => 'somegroup',
             'lock_install' => false,
             'run_mode' => 'blah',
+            'offline_mode' => true,
             'enable_gzip' => false,
             'domain' => 'foo.org',
             'port' => '8888',
@@ -23,8 +24,12 @@ describe 'gogs::config', :type => :class do
             'db_password' => 's3cr3t',
             'db_ssl_mode' => 'enable',
             'db_data' => 'data/gogs',
+            'enable_mailer' => true,
+            'mailer_host' => 'mailserver',
+            'mailer_from' => 'gogs@gogs.com',
             'initrd_script' => 'initrd.centos',
-            'secret_key' => 'abcd1234'
+            'secret_key' => 'abcd1234',
+            'disable_gravatar' => true
           }
         end
         let(:facts) do
@@ -47,6 +52,9 @@ describe 'gogs::config', :type => :class do
                .with_content(/^\s*ENABLE_GZIP = false$/)
                .with_content(/^\s*DOMAIN = foo\.org/)
                .with_content(/^\s*ROOT_URL = http:\/\/foo\.org:8888/) }
+               .with_content(/^\s*OFFLINE_MODE = true$/)
+               .with_content(/^\s*HOST = mailserver/)
+               .with_content(/^\s*DISABLE_GRAVATAR = true$/)
         it { is_expected.to contain_file('/etc/init.d/gogs')
                .with_owner('root')
                .with_group('root')
