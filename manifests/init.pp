@@ -32,6 +32,9 @@
 # [*port*]
 #   The port the Gogs service should listen on. Default: 6000.
 #
+# [*offline_mode*]
+#   Boolean to indicate whether or not to run Gogs in offline mode. Default: false.
+#
 # [*root_url*]
 #   The URL for accessing the Gogs service, set if behind a reverse proxy. Default: http://{domain}:{port}/
 #
@@ -81,6 +84,9 @@
 # [*require_signin_view*]
 #   Require signin to see anything? Default: false
 #
+# [*disable_gravatar*]
+#   Boolean to indicate whether or not to disable gravatar. Default: false
+#
 class gogs (
 
   $install_repo = $gogs::params::install_repo,
@@ -92,6 +98,7 @@ class gogs (
   $domain = $gogs::params::domain,
   $addr = $gogs::params::addr,
   $port = $gogs::params::port,
+  $offline_mode = $gogs::params::offline_mode,
   $cert_file = $gogs::params::cert_file,
   $key_file = $gogs::params::key_file,
   $root_url = $gogs::params::root_url,
@@ -108,7 +115,8 @@ class gogs (
   $lock_install = $gogs::params::lock_install,
   $app_name = $gogs::params::app_name,
   $disable_registration = $gogs::params::disable_registration,
-  $require_signin_view = $gogs::params::require_signin_view
+  $require_signin_view = $gogs::params::require_signin_view,
+  $disable_gravatar = $gogs::params::disable_gravatar
 
 ) inherits gogs::params {
 
