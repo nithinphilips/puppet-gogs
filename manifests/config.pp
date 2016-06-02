@@ -37,24 +37,17 @@ class gogs::config(
 
   user { $owner:
     ensure  => present,
-  }
+  } ->
 
   group { $group:
     ensure  => present,
-  }
+  } ->
 
   file { $repository_root:
     ensure => 'directory',
     owner  => $owner,
     group  => $group,
-  }
-
-  file { '/etc/gogs/conf/app.ini':
-    ensure  => 'file',
-    content => template('gogs/app.ini.erb'),
-    owner   => $owner,
-    group   => $group,
-  }
+  } ->
 
   file { '/etc/init.d/gogs':
     ensure => 'file',
@@ -62,6 +55,24 @@ class gogs::config(
     source => "puppet:///modules/gogs/${initrd_script}",
     owner  => 'root',
     group  => 'root',
-  }
+  } ->
 
+  file { '/opt/gogs/custom':
+    ensure => 'directory',
+    owner  => $owner,
+    group  => $group,
+  } ->
+
+  file { '/opt/gogs/custom/conf':
+    ensure => 'directory',
+    owner  => $owner,
+    group  => $group,
+  } ->
+
+  file { '/opt/gogs/custom/conf/app.ini':
+    ensure  => 'file',
+    content => template('gogs/app.ini.erb'),
+    owner   => $owner,
+    group   => $group,
+  }
 }
