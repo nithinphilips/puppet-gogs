@@ -17,6 +17,7 @@ class gogs::params {
   $domain          = 'localhost'
   $addr            = ''
   $port            = 6000
+  $offline_mode    = false
   $cert_file       = 'custom/https/cert.pem'
   $key_file        = 'custom/https/cert.key'
   $root_url        = "http://${domain}:${port}/"
@@ -31,6 +32,7 @@ class gogs::params {
   $app_name        = 'Gogs: Go Git Service'
   $disable_registration = false
   $require_signin_view = false
+  $disable_gravatar = false
   $secret_key      = 'jdkR3DBcXUDdznd'
 
   # Variables
