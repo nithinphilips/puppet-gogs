@@ -39,7 +39,7 @@ describe 'gogs::config', :type => :class do
                .with_owner('somebody')
                .with_group('somegroup')
            }
-        it { is_expected.to contain_file('/etc/gogs/conf/app.ini')
+        it { is_expected.to contain_file('/opt/gogs/custom/conf/app.ini')
                .with_content(/^\s*INSTALL_LOCK = false$/)
                .with_content(/^\s*RUN_MODE = blah$/)
                .with_content(/^\s*RUN_USER = somebody$/)
