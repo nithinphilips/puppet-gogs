@@ -6,40 +6,43 @@
 class gogs::params {
 
   # Parameter defaults
-  $lock_install    = true
-  $install_repo    = false
-  $package_ensure  = 'present'
-  $service_ensure  = 'running'
-  $run_mode        = 'prod'
-  $repository_root = '/home/gogs/gogs-repositories'
-  $enable_gzip     = false
-  $protocol        = 'http'
-  $domain          = 'localhost'
-  $addr            = ''
-  $port            = 6000
-  $offline_mode    = false
-  $cert_file       = 'custom/https/cert.pem'
-  $key_file        = 'custom/https/cert.key'
-  $root_url        = "http://${domain}:${port}/"
-  $db_type         = 'postgres'
-  $db_host         = 'localhost'
-  $db_port         = 5432
-  $db_name         = 'gogs'
-  $db_user         = 'gogs'
-  $db_password     = 'gogs'
-  $db_ssl_mode     = 'disable'
-  $db_data         = 'data/gogs.db'
-  $app_name        = 'Gogs: Go Git Service'
+  $lock_install         = true
+  $install_repo         = false
+  $package_ensure       = 'present'
+  $service_ensure       = 'running'
+  $run_mode             = 'prod'
+  $repository_root      = '/home/gogs/gogs-repositories'
+  $enable_gzip          = false
+  $protocol             = 'http'
+  $domain               = 'localhost'
+  $addr                 = ''
+  $port                 = 6000
+  $offline_mode         = false
+  $cert_file            = 'custom/https/cert.pem'
+  $key_file             = 'custom/https/cert.key'
+  $root_url             = "http://${domain}:${port}/"
+  $db_type              = 'postgres'
+  $db_host              = 'localhost'
+  $db_port              = 5432
+  $db_name              = 'gogs'
+  $db_user              = 'gogs'
+  $db_password          = 'gogs'
+  $db_ssl_mode          = 'disable'
+  $db_data              = 'data/gogs.db'
+  $enable_mailer        = false
+  $mailer_host          = ''
+  $mailer_from          = ''
+  $app_name             = 'Gogs: Go Git Service'
   $disable_registration = false
-  $require_signin_view = false
-  $disable_gravatar = false
-  $secret_key      = 'jdkR3DBcXUDdznd'
+  $require_signin_view  = false
+  $disable_gravatar     = false
+  $secret_key           = 'jdkR3DBcXUDdznd'
 
   # Variables
-  $owner        = 'gogs'
-  $group        = 'gogs'
-  $package_name = 'gogs'
-  $service_name = 'gogs'
+  $owner                = 'gogs'
+  $group                = 'gogs'
+  $package_name         = 'gogs'
+  $service_name         = 'gogs'
 
   case $::osfamily {
     'RedHat': {

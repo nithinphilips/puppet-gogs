@@ -19,7 +19,7 @@
 #
 # [*run_mode*]
 #   The environment this Gogs instance is running for. Allowed values are: 'dev', 'test' or
-#   'prod'. Default: 'prod'
+#   'prod'. Default: 'prod'.
 #
 # [*repository_root*]
 #   Root directory that will contain all Git repositories. If this directory does not exist,
@@ -36,7 +36,7 @@
 #   Boolean to indicate whether or not to run Gogs in offline mode. Default: false.
 #
 # [*root_url*]
-#   The URL for accessing the Gogs service, set if behind a reverse proxy. Default: http://{domain}:{port}/
+#   The URL for accessing the Gogs service, set if behind a reverse proxy. Default: 'http://{domain}:{port}/'.
 #
 # [*enable_gzip*]
 #   Boolean indicating wheter or not (http) gzip compression should be used. Default: false.
@@ -71,21 +71,30 @@
 # [*db_data*]
 #   Path where sqlite3 should store its data. Only used when db_type = 'sqlite3'.
 #
+# [*enable_mailer*]
+#   Boolean to indicate whether or not to use a mail service. Default: false.
+#
+# [*mailer_host*]
+#   SMTP mail host address and port. Default: ''.
+#
+# [*mailer_from*]
+#   Mail from address, RFC 5322. This can be just an email address, or the “Name” <email@example.com> format. Default: ''.
+#
 # [*secret_key*]
 #   The secret key. You should provide one for each Gogs instance. When not passed a default
 #   secret key will be used.
 #
 # [*app_name*]
-#   The application name. Default: 'Gogs: Go Git Service'
+#   The application name. Default: 'Gogs: Go Git Service'.
 #
 # [*disable_registration*]
-#   Disable registration? Default: false
+#   Disable registration? Default: false.
 #
 # [*require_signin_view*]
-#   Require signin to see anything? Default: false
+#   Require signin to see anything? Default: false.
 #
 # [*disable_gravatar*]
-#   Boolean to indicate whether or not to disable gravatar. Default: false
+#   Boolean to indicate whether or not to disable gravatar. Default: false.
 #
 class gogs (
 
@@ -111,6 +120,9 @@ class gogs (
   $db_password = $gogs::params::db_password,
   $db_ssl_mode = $gogs::params::db_ssl_mode,
   $db_data = $gogs::params::db_data,
+  $enable_mailer = $gogs::params::enable_mailer,
+  $mailer_host = $gogs::params::mailer_host,
+  $mailer_from = $gogs::params::mailer_from,
   $secret_key = $gogs::params::secret_key,
   $lock_install = $gogs::params::lock_install,
   $app_name = $gogs::params::app_name,
