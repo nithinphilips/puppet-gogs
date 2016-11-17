@@ -128,7 +128,9 @@ class gogs (
   $app_name = $gogs::params::app_name,
   $disable_registration = $gogs::params::disable_registration,
   $require_signin_view = $gogs::params::require_signin_view,
-  $disable_gravatar = $gogs::params::disable_gravatar
+  $disable_gravatar = $gogs::params::disable_gravatar,
+  $ssh_port = $gogs::params::ssh_port,
+  $use_builtin_ssh_server = $gogs::params::use_builtin_ssh_server,
 
 ) inherits gogs::params {
 
