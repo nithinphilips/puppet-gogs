@@ -130,7 +130,7 @@ class gogs (
   $require_signin_view = $gogs::params::require_signin_view,
   $disable_gravatar = $gogs::params::disable_gravatar,
   $ssh_port = $gogs::params::ssh_port,
-  $use_builtin_ssh_server = $gogs::params::use_builtin_ssh_server,
+  $start_ssh_server = $gogs::params::start_ssh_server,
 
 ) inherits gogs::params {
 
