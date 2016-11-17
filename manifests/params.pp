@@ -37,6 +37,8 @@ class gogs::params {
   $require_signin_view  = false
   $disable_gravatar     = false
   $secret_key           = 'jdkR3DBcXUDdznd'
+  $ssh_port             = 22
+  $start_ssh_server     = false
 
   # Variables
   $owner                = 'gogs'
