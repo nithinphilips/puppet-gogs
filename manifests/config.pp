@@ -34,7 +34,10 @@ class gogs::config(
   $app_name = $gogs::app_name,
   $disable_registration = $gogs::disable_registration,
   $require_signin_view = $gogs::require_signin_view,
-  $disable_gravatar = $gogs::disable_gravatar
+  $disable_gravatar = $gogs::disable_gravatar,
+  $ssh_port = $gogs::ssh_port,
+  $start_ssh_server = $gogs::start_ssh_server,
+
 
 ) inherits gogs::params {
 
